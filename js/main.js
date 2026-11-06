@@ -355,6 +355,7 @@
     setRing(0, steepTime(pour.steep));
     var btn = $('[data-pour]');
     btn.disabled = true;
+    btn.textContent = 'Идёт пролив…';
     $('[data-pour-reset]').hidden = true;
     setPourStatus(steepLabel() + ': льём воду…');
     $('.timer').dataset.state = 'pouring';
