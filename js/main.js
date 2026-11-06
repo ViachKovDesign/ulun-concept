@@ -580,8 +580,8 @@
       return ok;
     }
     checks.forEach(function (c) {
-      c.el.addEventListener('change', function () { if (c.el.hasAttribute('aria-invalid')) validate(c); });
-      c.el.addEventListener('blur', function () { if (c.el.value) validate(c); });
+      // Перепроверяем во время ввода (а не на blur), чтобы подсказки не сдвигали кнопку в момент клика
+      c.el.addEventListener('input', function () { if (c.el.getAttribute('aria-invalid') === 'true') validate(c); });
     });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -680,7 +680,8 @@
     var mm = gsap.matchMedia();
     $$('.chapter').forEach(function (ch) {
       var parts = $$('.chapter__stage .scene > :not(defs):not(title)', ch);
-      gsap.from(parts, {
+      if (!parts.length) parts = $$('.chapter__stage > *', ch);
+      if (parts.length) gsap.from(parts, {
         opacity: 0, y: 40, scale: 0.9, transformOrigin: '50% 50%', stagger: 0.05, ease: 'back.out(1.6)', duration: 0.9,
         scrollTrigger: { trigger: ch, start: 'top 75%', toggleActions: 'play none none none' }
       });
@@ -692,7 +693,7 @@
     mm.add('(min-width: 1024px) and (min-height: 700px)', function () {
       $$('.chapter').forEach(function (ch) {
         if (ch.offsetHeight > window.innerHeight + 4) return;
-        var stage = $('.chapter__stage .scene', ch);
+        var stage = $('.chapter__stage .scene', ch) || $('.chapter__stage', ch);
         var tl = gsap.timeline({
           scrollTrigger: { trigger: ch, start: 'top top', end: '+=55%', pin: true, scrub: 0.5, anticipatePin: 1 }
         });

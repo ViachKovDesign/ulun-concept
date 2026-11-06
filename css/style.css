@@ -109,7 +109,10 @@ html:not(.js) .js-only { display: none !important; }
 .w6 { stroke-width: 6; } .w7 { stroke-width: 7; } .w8 { stroke-width: 8; } .w10 { stroke-width: 10; }
 .w12 { stroke-width: 12; } .w16 { stroke-width: 16; } .w18 { stroke-width: 18; }
 .dots { stroke-dasharray: .1 12; }
-.fill-tea { fill: var(--fg); fill-opacity: 0; transition: fill-opacity .4s; }
+.fill-tea { fill: var(--fg); fill-opacity: var(--tea-fill, 0); }
+.swap { --fg: var(--rice); --bg: var(--green); }
+.is-inv .swap { --fg: var(--green); --bg: var(--rice); }
+[hidden] { display: none !important; }
 .svg-label { fill: var(--fg); font-family: var(--font-display); font-size: 15px; font-weight: 600; }
 .svg-label--bg { fill: var(--bg); font-size: 22px; }
 .svg-label--sm { font-size: 13px; }
@@ -211,7 +214,7 @@ html:not(.js) .js-only { display: none !important; }
 .kicker::before { content: ""; width: 10px; height: 10px; border-radius: 50% 0 50% 0; background: currentColor; transform: rotate(45deg); }
 .section-title {
   font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(2.1rem, 1.2rem + 4vw, 4.6rem); line-height: 1; letter-spacing: -.02em;
+  font-size: clamp(2rem, 1rem + 3.4vw, 4.2rem); line-height: 1; letter-spacing: -.02em;
   margin-bottom: 20px;
   text-wrap: balance;
 }
@@ -222,7 +225,7 @@ html:not(.js) .js-only { display: none !important; }
 .hero__inner { display: grid; gap: 24px; align-items: center; }
 .hero__title {
   font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(2.5rem, 1rem + 6.6vw, 6.4rem); line-height: .98; letter-spacing: -.03em;
+  font-size: clamp(2.3rem, 1rem + 5.2vw, 5.4rem); line-height: .98; letter-spacing: -.03em;
   margin-bottom: 24px;
 }
 .hero__title .line { display: block; overflow: hidden; padding-bottom: .06em; }
@@ -255,7 +258,7 @@ html:not(.js) .js-only { display: none !important; }
   .four-numbers__item { padding: 24px; }
 }
 @media (min-width: 1024px) {
-  .hero__inner { grid-template-columns: 1.05fr 1fr; gap: 40px; }
+  .hero__inner { grid-template-columns: 1.2fr 1fr; gap: 40px; }
   .hero { padding-top: calc(var(--header-h) + 64px); }
 }
 
@@ -353,7 +356,7 @@ html:not(.js) .js-only { display: none !important; }
 .tea-card__name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
 .tea-card__meta { font-size: .9rem; font-weight: 700; }
 .tea-card:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--fg); }
-.tea-card:has(input:checked) { background: var(--fg); color: var(--bg); --fg: var(--rice); --bg: var(--green); box-shadow: 4px 4px 0 var(--green); transform: translate(-2px, -2px); border-color: var(--green); }
+.tea-card:has(input:checked) { background: var(--green); color: var(--rice); --fg: var(--rice); --bg: var(--green); box-shadow: 4px 4px 0 rgba(var(--green-rgb), .45); transform: translate(-2px, -2px); border-color: var(--green); }
 .tea-card:has(input:focus-visible) { outline: 3px solid var(--green); outline-offset: 4px; }
 .tea-card::after {
   content: ""; position: absolute; top: 14px; right: 14px; width: 18px; height: 18px; border-radius: 50%;
@@ -362,7 +365,7 @@ html:not(.js) .js-only { display: none !important; }
 .tea-card:has(input:checked)::after { background: currentColor; box-shadow: inset 0 0 0 3px var(--bg); }
 html:not(.js) .tea-card { cursor: default; }
 html:not(.js) .tea-card::after { display: none; }
-html:not(.js) .tea-card:has(input:checked) { background: var(--bg); color: var(--fg); --fg: var(--green); --bg: var(--rice); box-shadow: none; transform: none; }
+html:not(.js) .tea-card:has(input:checked) { background: var(--rice); color: var(--green); --fg: var(--green); --bg: var(--rice); box-shadow: none; transform: none; }
 
 @media (min-width: 768px) {
   .tea-picker__grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
@@ -407,8 +410,8 @@ html:not(.js) .tea-card:has(input:checked) { background: var(--bg); color: var(-
 .scene--cups { max-width: 520px; }
 .cup-slot { transition: opacity .4s; }
 .cup-slot.is-off { opacity: .22; }
-.cup-slot.is-full .fill-tea { fill-opacity: 1; }
-.cup-slot.is-maybe .fill-tea { fill-opacity: .35; }
+.cup-slot.is-full { --tea-fill: 1; }
+.cup-slot.is-maybe { --tea-fill: .35; }
 .cup-num { fill: var(--fg); font-family: var(--font-display); font-size: 13px; font-weight: 700; }
 
 .bars { width: 100%; max-width: 520px; border: 2px solid var(--fg); border-radius: var(--radius); padding: 16px 18px; }
@@ -486,11 +489,11 @@ html:not(.js) .tea-card:has(input:checked) { background: var(--bg); color: var(-
 .mistake__num { font-size: .8rem; letter-spacing: .1em; }
 .mistake__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; padding-top: 6px; }
 .mini { border-radius: 16px; padding: 10px 10px 8px; display: grid; gap: 4px; }
-.mini svg { width: 100%; height: auto; }
+.mini > svg { width: 100%; height: auto; }
 .mini figcaption { display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: .9rem; }
 .mini__mark { width: 20px; height: 20px; flex: none; }
 .mini--bad { border: 2px dashed var(--fg); }
-.mini--good { background: var(--fg); color: var(--bg); --fg: var(--rice); --bg: var(--green); }
+.mini--good { background: var(--green); color: var(--rice); --fg: var(--rice); --bg: var(--green); }
 @media (min-width: 768px) {
   .mistakes__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -537,14 +540,10 @@ html:not(.js) .tea-card:has(input:checked) { background: var(--bg); color: var(-
   .field--wide { grid-column: 1 / -1; }
 }
 @media (min-width: 1024px) {
-  .teahouse__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px 64px; align-items: center; }
-  .booking { grid-column: 1 / -1; }
-}
-@media (min-width: 1280px) {
-  .teahouse__inner { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
-  .teahouse__art { grid-row: 1 / span 2; grid-column: 1; }
-  .teahouse__text { grid-column: 2; }
-  .booking { grid-column: 2; }
+  .teahouse__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px 64px; align-items: start; }
+  .teahouse__text { grid-column: 1; grid-row: 1; }
+  .booking { grid-column: 1; grid-row: 2; }
+  .teahouse__art { grid-column: 2; grid-row: 1 / span 2; position: sticky; top: calc(var(--header-h) + 40px); align-self: start; }
 }
 
 /* ---------- Подвал ---------- */
