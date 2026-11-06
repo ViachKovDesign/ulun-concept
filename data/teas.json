@@ -1,0 +1,70 @@
+{
+  "volume": 100,
+  "teas": [
+    {
+      "id": "green",
+      "name": "Зелёный",
+      "nameGen": "зелёного",
+      "example": "Лунцзин, Билочунь",
+      "about": "Нежный, почти не окислен. Боится кипятка — сразу становится горьким.",
+      "tempMin": 75, "tempMax": 80,
+      "grams": 3, "gramsMin": 3, "gramsMax": 4,
+      "time": 30, "timeAdd": 10,
+      "steeps": 3, "steepsMin": 2, "steepsMax": 3,
+      "rinse": false,
+      "steepsNote": "Зелёный отдаёт вкус быстро: два-три пролива — и лист устал."
+    },
+    {
+      "id": "white",
+      "name": "Белый",
+      "nameGen": "белого",
+      "example": "Бай Му Дань, Серебряные иглы",
+      "about": "Почти без обработки: лист просто завялен и высушен. Мягкий, медовый.",
+      "tempMin": 80, "tempMax": 85,
+      "grams": 4, "gramsMin": 4, "gramsMax": 5,
+      "time": 40, "timeAdd": 10,
+      "steeps": 5, "steepsMin": 4, "steepsMax": 6,
+      "rinse": false,
+      "steepsNote": "Белый раскрывается неторопливо: держит вкус четыре-шесть проливов."
+    },
+    {
+      "id": "oolong",
+      "name": "Улун",
+      "nameGen": "улуна",
+      "example": "Те Гуань Инь, Да Хун Пао",
+      "about": "Наш любимец. Частично окислен, скручен в шарики или жгутики, раскрывается долго.",
+      "tempMin": 90, "tempMax": 95,
+      "grams": 7, "gramsMin": 6, "gramsMax": 7,
+      "time": 20, "timeAdd": 5,
+      "steeps": 7, "steepsMin": 6, "steepsMax": 8,
+      "rinse": true,
+      "steepsNote": "Скрученный лист разворачивается постепенно — вкус меняется от пролива к проливу."
+    },
+    {
+      "id": "red",
+      "name": "Красный",
+      "nameGen": "красного",
+      "example": "Дянь Хун, Цзинь Цзюнь Мэй",
+      "about": "В Европе его зовут чёрным. Полностью окислен, сладкий, хлебный, иногда с ноткой мёда.",
+      "tempMin": 90, "tempMax": 95,
+      "grams": 5, "gramsMin": 4, "gramsMax": 5,
+      "time": 20, "timeAdd": 10,
+      "steeps": 5, "steepsMin": 4, "steepsMax": 6,
+      "rinse": false,
+      "steepsNote": "Красный щедрый, но не бесконечный: четыре-шесть проливов."
+    },
+    {
+      "id": "puer",
+      "name": "Пуэр",
+      "nameGen": "пуэра",
+      "example": "Шу пуэр, Шэн пуэр",
+      "about": "Прессованный и выдержанный. Плотный, землистый, любит крутой кипяток.",
+      "tempMin": 95, "tempMax": 100,
+      "grams": 6, "gramsMin": 5, "gramsMax": 7,
+      "time": 15, "timeAdd": 5,
+      "steeps": 9, "steepsMin": 8, "steepsMax": 10,
+      "rinse": true,
+      "steepsNote": "Пуэр — марафонец: восемь-десять проливов, а хороший — и больше."
+    }
+  ]
+}

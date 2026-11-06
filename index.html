@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>УЛУН — как заварить чай правильно. Интерактивный гид</title>
+  <meta name="description" content="Интерактивный гид вымышленной московской чайной «УЛУН»: выберите чай, настройте температуру воды, граммы листа и время пролива — и заберите свою шпаргалку.">
+  <meta name="theme-color" content="#1E4230">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://viachkovdesign.github.io/-/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="УЛУН — чайная (концепт)">
+  <meta property="og:title" content="Хороший чай — это 4 числа. Интерактивный гид чайной «УЛУН»">
+  <meta property="og:description" content="Температура, граммы, секунды и проливы: заварите чай вместе с гидом и заберите шпаргалку. Концепт-проект ViachKovDesign.">
+  <meta property="og:url" content="https://viachkovdesign.github.io/-/">
+  <meta property="og:image" content="https://viachkovdesign.github.io/-/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Зелёный чайник с улыбкой и надпись «Хороший чай — это 4 числа»">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preload" href="fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/nunito-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <!-- Общие символы иллюстраций -->
+  <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <symbol id="leaf" viewBox="-30 -60 60 120">
+        <path class="f" d="M0 -56 C24 -40 34 -6 22 22 C15 38 7 48 0 56 C-7 48 -15 38 -22 22 C-34 -6 -24 -40 0 -56 Z"/>
+        <path class="sb w3" d="M0 -44 C1 -10 1 20 0 56"/>
+      </symbol>
+      <symbol id="leaf-line" viewBox="-30 -60 60 120">
+        <path class="b s w4" d="M0 -54 C24 -40 34 -6 22 22 C15 38 7 48 0 54 C-7 48 -15 38 -22 22 C-34 -6 -24 -40 0 -54 Z"/>
+        <path class="s w3" d="M0 -40 C1 -10 1 20 0 54 M0 -12 L12 -22 M0 8 L-12 -2 M0 26 L10 18"/>
+      </symbol>
+      <symbol id="ic-green" viewBox="0 0 64 64">
+        <path class="f" d="M12 54 C12 30 28 13 52 9 C52 33 36 50 12 54 Z"/>
+        <path class="sb w3" d="M16 50 C26 38 36 26 48 14"/>
+        <path class="s w3" d="M7 58 L14 51"/>
+      </symbol>
+      <symbol id="ic-white" viewBox="0 0 64 64">
+        <path class="b s w3" d="M32 7 C43 20 43 40 32 53 C21 40 21 20 32 7 Z"/>
+        <path class="s w3" d="M24 22 L19 19 M23 32 L17 32 M25 42 L20 45 M40 22 L45 19 M41 32 L47 32 M39 42 L44 45 M32 53 L32 60"/>
+      </symbol>
+      <symbol id="ic-oolong" viewBox="0 0 64 64">
+        <circle class="f" cx="30" cy="36" r="21"/>
+        <path class="sb w3" d="M30 36 C30 33 34 33 34 36 C34 41 26 41 26 36 C26 29 38 29 38 36 C38 45 22 46 21 36 C20 25 41 23 42 34"/>
+        <path class="f" d="M44 22 C48 12 54 9 60 6 C58 14 54 21 47 26 Z"/>
+      </symbol>
+      <symbol id="ic-red" viewBox="0 0 64 64">
+        <path class="s w7" d="M10 40 C18 26 28 48 36 32 C42 20 48 28 55 16"/>
+        <path class="s w5" d="M14 54 C22 44 30 58 40 48 C44 44 48 46 52 42"/>
+      </symbol>
+      <symbol id="ic-puer" viewBox="0 0 64 64">
+        <path class="f" d="M5 30 V38 C5 47 17 54 32 54 C47 54 59 47 59 38 V30 Z"/>
+        <ellipse class="b s w3" cx="32" cy="30" rx="27" ry="14"/>
+        <ellipse class="t2" cx="32" cy="30" rx="6" ry="3"/>
+        <path class="s w2" d="M15 28 L21 25 M41 23 L47 26 M22 36 L28 37 M40 35 L46 33 M30 21 L35 21"/>
+      </symbol>
+      <symbol id="ic-thermo" viewBox="0 0 48 48">
+        <rect class="b s w3" x="18" y="4" width="12" height="28" rx="6"/>
+        <circle class="f" cx="24" cy="36" r="8"/>
+        <rect class="f" x="21" y="14" width="6" height="20" rx="3"/>
+        <path class="s w2" d="M32 10 H36 M32 16 H36 M32 22 H36"/>
+      </symbol>
+      <symbol id="ic-scale" viewBox="0 0 48 48">
+        <rect class="f" x="6" y="18" width="36" height="24" rx="8"/>
+        <circle class="b" cx="24" cy="30" r="7"/>
+        <path class="s w2" d="M24 30 L28 26"/>
+        <path class="f" d="M10 14 H38 L36 17 H12 Z"/>
+        <path class="f" d="M24 4 C30 6 32 10 30 14 C26 13 22 9 24 4 Z"/>
+      </symbol>
+      <symbol id="ic-sand" viewBox="0 0 48 48">
+        <path class="s w3" d="M12 5 H36 M12 43 H36"/>
+        <path class="b s w3" d="M15 6 C15 16 24 20 24 24 C24 28 15 32 15 42 H33 C33 32 24 28 24 24 C24 20 33 16 33 6 Z"/>
+        <path class="f" d="M18 12 H30 C29 16 25 19 24 20 C23 19 19 16 18 12 Z M17 41 C18 35 24 32 24 32 C24 32 30 35 31 41 Z"/>
+      </symbol>
+      <symbol id="ic-cups" viewBox="0 0 48 48">
+        <path class="f" d="M4 22 H22 C22 31 18 36 13 36 C8 36 4 31 4 22 Z"/>
+        <path class="b s w3" d="M26 22 H44 C44 31 40 36 35 36 C30 36 26 31 26 22 Z"/>
+        <path class="s w2" d="M10 16 C8 13 12 11 10 8 M36 16 C34 13 38 11 36 8"/>
+      </symbol>
+      <symbol id="cup" viewBox="0 0 60 60">
+        <path class="b s w3" d="M8 18 H52 C52 38 43 50 30 50 C17 50 8 38 8 18 Z"/>
+        <path class="fill-tea" d="M12 24 H48 C46 38 39 46 30 46 C21 46 14 38 12 24 Z"/>
+        <path class="s w3" d="M20 54 H40"/>
+      </symbol>
+      <symbol id="ic-check" viewBox="0 0 24 24"><path class="s w3" d="M5 12.5 L10 17 L19 7"/></symbol>
+      <symbol id="ic-cross" viewBox="0 0 24 24"><path class="s w3" d="M6 6 L18 18 M18 6 L6 18"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="site-header__bar">
+      <a class="logo" href="#main" aria-label="УЛУН — к началу страницы">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle class="f" cx="20" cy="20" r="19"/>
+          <path class="b" d="M20 7 C29 13 31 22 26 29 C24 32 22 33 20 34 C18 33 16 32 14 29 C9 22 11 13 20 7 Z"/>
+          <path class="s w2" d="M20 12 C20.5 19 20.5 26 20 33"/>
+        </svg>
+        <span class="logo__word">УЛУН</span>
+      </a>
+      <button class="menu-toggle js-only" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__icon" aria-hidden="true"><span></span><span></span></span>
+        <span class="menu-toggle__label">Меню</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основное меню">
+        <ul>
+          <li><a href="#guide">Гид по заварке</a></li>
+          <li><a href="#ch-6">Шпаргалка</a></li>
+          <li><a href="#mistakes">Ошибки</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--sm site-header__cta" href="#teahouse">Чайная</a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="kicker">Интерактивный гид чайной «УЛУН»</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="line"><span>Хороший чай —</span></span>
+            <span class="line"><span>это <span class="hero__four">4</span> числа</span></span>
+          </h1>
+          <p class="hero__lead">Не нужна ни церемония, ни дорогая посуда. Достаточно знать четыре числа для своего чая — и чашка получится такой, какой её задумал чайный мастер. Покажем на примере улуна, а дальше подстроим под ваш лист.</p>
+          <a class="btn btn--lg" href="#guide">Заварить вместе
+            <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="s w3" d="M12 4 V20 M5 13 L12 20 L19 13"/></svg>
+          </a>
+        </div>
+
+        <figure class="hero__art" aria-hidden="true">
+          <svg class="scene scene--hero" viewBox="0 0 640 560" focusable="false">
+            <circle class="t1" cx="320" cy="300" r="236"/>
+            <g class="hero-steam" data-parallax="-40">
+              <path class="s w3 steam" d="M92 236 C76 214 108 198 92 174 C78 152 104 138 94 116"/>
+              <path class="s w3 steam steam--2" d="M120 226 C106 206 134 192 120 170 C108 152 128 140 120 122"/>
+              <path class="s w3 steam steam--3" d="M520 400 C508 386 530 374 520 358 C512 346 528 336 520 324"/>
+            </g>
+            <g class="hero-leaves">
+              <use href="#leaf" x="440" y="70" width="48" height="96" transform="rotate(28 464 118)" data-parallax="-120"/>
+              <use href="#leaf-line" x="170" y="40" width="40" height="80" transform="rotate(-36 190 80)" data-parallax="-80"/>
+              <use href="#leaf" x="540" y="210" width="30" height="60" transform="rotate(64 555 240)" data-parallax="-160"/>
+              <use href="#leaf-line" x="40" y="330" width="36" height="72" transform="rotate(-70 58 366)" data-parallax="-60"/>
+            </g>
+            <path class="s w3" d="M48 478 C190 468 450 468 600 478"/>
+            <path class="s w3 dots" d="M120 500 H520"/>
+            <g class="hero-pot">
+              <path class="s w18" d="M422 284 C482 270 506 336 474 376 C458 396 436 400 420 396"/>
+              <path class="f" d="M184 352 C150 346 126 320 112 282 L98 260 L124 254 C136 284 154 304 190 310 Z"/>
+              <path class="f" d="M170 334 C170 252 230 216 300 216 C370 216 430 252 430 334 C430 404 380 444 300 444 C220 444 170 404 170 334 Z"/>
+              <path class="f" d="M236 436 H364 L354 462 H246 Z"/>
+              <path class="f" d="M234 224 C246 194 354 194 366 224 Z"/>
+              <circle class="f" cx="300" cy="190" r="15"/>
+              <path class="sb w4" d="M226 226 H374"/>
+              <path class="sb w4 dots" d="M190 292 C240 312 360 312 410 292"/>
+              <g class="hero-face">
+                <ellipse class="b eye" cx="268" cy="352" rx="7" ry="8"/>
+                <ellipse class="b eye" cx="332" cy="352" rx="7" ry="8"/>
+                <path class="sb w4" d="M284 374 C293 386 307 386 316 374"/>
+                <ellipse class="t-bg" cx="244" cy="378" rx="12" ry="7"/>
+                <ellipse class="t-bg" cx="356" cy="378" rx="12" ry="7"/>
+              </g>
+            </g>
+            <g class="hero-cup">
+              <path class="b s w4" d="M470 424 H558 C556 462 536 482 514 482 C492 482 472 462 470 424 Z"/>
+              <path class="t2" d="M476 432 H552 C548 460 534 474 514 474 C494 474 480 460 476 432 Z"/>
+              <path class="s w4" d="M556 436 C576 436 578 460 552 462"/>
+            </g>
+          </svg>
+        </figure>
+      </div>
+
+      <div class="container">
+        <ol class="four-numbers" aria-label="Четыре числа на примере улуна">
+          <li class="four-numbers__item">
+            <svg class="four-numbers__icon" aria-hidden="true" focusable="false"><use href="#ic-thermo"/></svg>
+            <span class="four-numbers__value"><span data-count="90">90</span>&nbsp;°C</span>
+            <span class="four-numbers__label">температура воды</span>
+          </li>
+          <li class="four-numbers__item">
+            <svg class="four-numbers__icon" aria-hidden="true" focusable="false"><use href="#ic-scale"/></svg>
+            <span class="four-numbers__value"><span data-count="7">7</span>&nbsp;г</span>
+            <span class="four-numbers__label">листа на 100&nbsp;мл</span>
+          </li>
+          <li class="four-numbers__item">
+            <svg class="four-numbers__icon" aria-hidden="true" focusable="false"><use href="#ic-sand"/></svg>
+            <span class="four-numbers__value"><span data-count="20">20</span>&nbsp;с</span>
+            <span class="four-numbers__label">первый пролив</span>
+          </li>
+          <li class="four-numbers__item">
+            <svg class="four-numbers__icon" aria-hidden="true" focusable="false"><use href="#ic-cups"/></svg>
+            <span class="four-numbers__value"><span data-count="7">7</span></span>
+            <span class="four-numbers__label">проливов из одного листа</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ГИД -->
+    <section class="guide" id="guide" aria-labelledby="guide-title">
+      <div class="container guide__intro">
+        <p class="kicker">Шесть шагов</p>
+        <h2 class="section-title" id="guide-title">Заварим вместе</h2>
+        <p class="guide__lead">Каждая глава — один шаг. Двигайте ползунки, нажимайте кнопки: гид подстроится под ваш чай, а в конце соберёт шпаргалку.</p>
+      </div>
+
+      <nav class="steps-rail js-only" aria-label="Шаги гида">
+        <ol>
+          <li><a href="#ch-1"><span class="steps-rail__dot" aria-hidden="true"></span><span class="steps-rail__text">1. Чай</span></a></li>
+          <li><a href="#ch-2"><span class="steps-rail__dot" aria-hidden="true"></span><span class="steps-rail__text">2. Вода</span></a></li>
+          <li><a href="#ch-3"><span class="steps-rail__dot" aria-hidden="true"></span><span class="steps-rail__text">3. Лист</span></a></li>
+          <li><a href="#ch-4"><span class="steps-rail__dot" aria-hidden="true"></span><span class="steps-rail__text">4. Пролив</span></a></li>
+          <li><a href="#ch-5"><span class="steps-rail__dot" aria-hidden="true"></span><span class="steps-rail__text">5. Проливы</span></a></li>
+          <li><a href="#ch-6"><span class="steps-rail__dot" aria-hidden="true"></span><span class="steps-rail__text">6. Шпаргалка</span></a></li>
+        </ol>
+      </nav>
+
+      <!-- Глава 1 -->
+      <article class="chapter chapter--tea" id="ch-1" aria-labelledby="ch-1-title" data-step="1">
+        <div class="container chapter__inner">
+          <div class="chapter__text">
+            <p class="chapter__num"><span>Шаг 1</span> из 6</p>
+            <h3 class="chapter__title" id="ch-1-title">Выбери чай</h3>
+            <p>Всё начинается с листа. Пять больших семейств чая различаются тем, насколько окислился лист, — а значит, и тем, как его заваривать. Зелёный почти не окислен и любит воду помягче, пуэр выдержан годами и просит крутого кипятка.</p>
+            <p class="js-only">Выберите чай — и гид подстроит под него все цифры дальше.</p>
+          </div>
+          <div class="chapter__stage">
+            <svg class="scene scene--jar" viewBox="0 0 420 360" aria-hidden="true" focusable="false">
+              <circle class="t1" cx="210" cy="190" r="160"/>
+              <g class="jar">
+                <rect class="f" x="128" y="62" width="164" height="34" rx="10"/>
+                <rect class="f" x="146" y="44" width="128" height="24" rx="8"/>
+                <path class="b s w4" d="M120 100 H300 C316 100 326 112 326 128 V300 C326 318 314 330 296 330 H124 C106 330 94 318 94 300 V128 C94 112 104 100 120 100 Z"/>
+                <rect class="f" x="122" y="170" width="176" height="110" rx="14"/>
+                <svg class="jar__icon" x="166" y="178" width="88" height="88" viewBox="0 0 64 64"><use href="#ic-oolong" data-tea-icon/></svg>
+                <ellipse class="b eye" cx="180" cy="140" rx="5" ry="6"/>
+                <ellipse class="b eye" cx="240" cy="140" rx="5" ry="6"/>
+                <circle class="f" cx="180" cy="141" r="3"/>
+                <circle class="f" cx="240" cy="141" r="3"/>
+                <path class="s w4" d="M200 152 C206 160 214 160 220 152"/>
+              </g>
+              <use class="jar-leaf jar-leaf--1" href="#leaf" x="320" y="40" width="40" height="80" transform="rotate(30 340 80)"/>
+              <use class="jar-leaf jar-leaf--2" href="#leaf-line" x="44" y="210" width="36" height="72" transform="rotate(-40 62 246)"/>
+            </svg>
+            <div class="tea-about js-only" aria-live="polite">
+              <p class="tea-about__name" data-tea-name>Улун</p>
+              <p class="tea-about__text" data-tea-about>Наш любимец. Частично окислен, скручен в шарики или жгутики, раскрывается долго.</p>
+              <p class="tea-about__example">Например: <span data-tea-example>Те Гуань Инь, Да Хун Пао</span></p>
+            </div>
+          </div>
+          <fieldset class="tea-picker">
+            <legend class="tea-picker__legend">Пять семейств чая</legend>
+            <div class="tea-picker__grid">
+              <label class="tea-card">
+                <input type="radio" name="tea" value="green">
+                <svg class="tea-card__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#ic-green"/></svg>
+                <span class="tea-card__name">Зелёный</span>
+                <span class="tea-card__meta">75–80&nbsp;°C · 3&nbsp;г</span>
+              </label>
+              <label class="tea-card">
+                <input type="radio" name="tea" value="white">
+                <svg class="tea-card__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#ic-white"/></svg>
+                <span class="tea-card__name">Белый</span>
+                <span class="tea-card__meta">80–85&nbsp;°C · 4&nbsp;г</span>
+              </label>
+              <label class="tea-card">
+                <input type="radio" name="tea" value="oolong" checked>
+                <svg class="tea-card__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#ic-oolong"/></svg>
+                <span class="tea-card__name">Улун</span>
+                <span class="tea-card__meta">90–95&nbsp;°C · 7&nbsp;г</span>
+              </label>
+              <label class="tea-card">
+                <input type="radio" name="tea" value="red">
+                <svg class="tea-card__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#ic-red"/></svg>
+                <span class="tea-card__name">Красный</span>
+                <span class="tea-card__meta">90–95&nbsp;°C · 5&nbsp;г</span>
+              </label>
+              <label class="tea-card">
+                <input type="radio" name="tea" value="puer">
+                <svg class="tea-card__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#ic-puer"/></svg>
+                <span class="tea-card__name">Пуэр</span>
+                <span class="tea-card__meta">95–100&nbsp;°C · 6&nbsp;г</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </article>
+
+      <!-- Глава 2 -->
+      <article class="chapter chapter--water is-inv" id="ch-2" aria-labelledby="ch-2-title" data-step="2">
+        <div class="container chapter__inner">
+          <div class="chapter__text">
+            <p class="chapter__num"><span>Шаг 2</span> из 6</p>
+            <h3 class="chapter__title" id="ch-2-title">Вода</h3>
+            <p>Температура — главное число. Слишком горячая вода обваривает нежный лист: чай горчит и вяжет. Слишком холодная не раскрывает его: настой пустой и плоский.</p>
+            <p>В Китае температуру угадывали по пузырькам: «крабьи глаза», «рыбьи глаза», «нити жемчуга» и, наконец, бурное кипение. Сегодня проще взять чайник с термостатом. Нет термостата — вскипятите воду и дайте ей постоять с открытой крышкой несколько минут.</p>
+            <div class="control js-only">
+              <div class="control__head">
+                <label class="control__label" for="temp">Температура воды</label>
+                <output class="control__value" for="temp" id="temp-out">100&nbsp;°C</output>
+              </div>
+              <input class="range" type="range" id="temp" min="60" max="100" step="1" value="100" aria-describedby="temp-hint">
+              <div class="control__scale" aria-hidden="true"><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span></div>
+            </div>
+            <div class="verdict js-only" id="temp-hint" aria-live="polite">
+              <p class="verdict__badge" data-temp-badge>Горячо</p>
+              <p class="verdict__text"><span data-temp-text>Для улуна нужно 90–95 °C.</span> <span class="verdict__bubbles">Пузырьки: <b data-bubble-name>бурное кипение</b>.</span></p>
+            </div>
+          </div>
+          <div class="chapter__stage">
+            <svg class="scene scene--kettle" viewBox="0 0 540 470" aria-hidden="true" focusable="false">
+              <defs>
+                <clipPath id="kettle-clip">
+                  <path d="M122 144 H298 C316 144 326 154 328 172 L346 380 C348 398 338 408 320 408 H100 C82 408 72 398 74 380 L92 172 C94 154 104 144 122 144 Z"/>
+                </clipPath>
+              </defs>
+              <circle class="t1" cx="230" cy="270" r="190"/>
+              <g class="kettle-steam" data-steam>
+                <path class="s w3 steam" d="M56 124 C40 104 70 90 56 66 C44 46 66 34 58 14"/>
+                <path class="s w3 steam steam--2" d="M84 116 C70 98 96 84 84 62 C74 46 92 36 86 22"/>
+              </g>
+              <path class="s w16" d="M330 182 C398 182 410 204 410 262 C410 330 400 360 346 366"/>
+              <path class="f" d="M94 178 L48 146 L56 132 L100 160 Z"/>
+              <path class="b" d="M122 144 H298 C316 144 326 154 328 172 L346 380 C348 398 338 408 320 408 H100 C82 408 72 398 74 380 L92 172 C94 154 104 144 122 144 Z"/>
+              <g clip-path="url(#kettle-clip)">
+                <g class="water" data-water>
+                  <path class="t2" d="M40 196 C90 186 130 206 180 196 C230 186 270 206 320 196 C350 190 370 196 380 196 V420 H40 Z"/>
+                  <path class="s w3" d="M40 196 C90 186 130 206 180 196 C230 186 270 206 320 196 C350 190 370 196 380 196"/>
+                </g>
+                <g class="bubbles" data-bubbles></g>
+              </g>
+              <path class="s w4" d="M122 144 H298 C316 144 326 154 328 172 L346 380 C348 398 338 408 320 408 H100 C82 408 72 398 74 380 L92 172 C94 154 104 144 122 144 Z"/>
+              <path class="f" d="M140 146 C150 116 270 116 280 146 Z"/>
+              <rect class="f" x="196" y="104" width="28" height="16" rx="6"/>
+              <rect class="f" x="62" y="408" width="296" height="30" rx="10"/>
+              <circle class="b" cx="320" cy="423" r="6"/>
+              <g class="kettle-face">
+                <ellipse class="f eye" cx="178" cy="288" rx="7" ry="8"/>
+                <ellipse class="f eye" cx="242" cy="288" rx="7" ry="8"/>
+                <path class="s w4" data-mouth d="M192 312 C202 312 218 312 228 312"/>
+              </g>
+              <g class="thermo">
+                <rect class="b s w4" x="440" y="70" width="40" height="320" rx="20"/>
+                <rect class="t2 zone" data-zone x="432" y="120" width="56" height="40" rx="6"/>
+                <rect class="f" data-mercury x="452" y="100" width="16" height="300" rx="8"/>
+                <circle class="f" cx="460" cy="404" r="32"/>
+                <g class="thermo__ticks">
+                  <path class="s w3" d="M490 360 H502 M490 295 H502 M490 230 H502 M490 165 H502 M490 100 H502"/>
+                  <text class="svg-label" x="506" y="365">60</text>
+                  <text class="svg-label" x="506" y="300">70</text>
+                  <text class="svg-label" x="506" y="235">80</text>
+                  <text class="svg-label" x="506" y="170">90</text>
+                  <text class="svg-label" x="506" y="105">100</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Глава 3 -->
+      <article class="chapter chapter--leaf" id="ch-3" aria-labelledby="ch-3-title" data-step="3">
+        <div class="container chapter__inner">
+          <div class="chapter__text">
+            <p class="chapter__num"><span>Шаг 3</span> из 6</p>
+            <h3 class="chapter__title" id="ch-3-title">Сколько листа</h3>
+            <p>Второе число — граммы. В чайной мы завариваем по-китайски: маленькая гайвань на 100&nbsp;мл, много листа и короткие проливы. Так вкус получается ярким, и его можно проследить от первой чашки до последней.</p>
+            <p>Мерьте весами: щепотка — это примерно грамм, но щепотки у всех разные. Мало листа — водянисто, много — терпко и тяжело.</p>
+            <div class="control js-only">
+              <div class="control__head">
+                <label class="control__label" for="grams">Листа в гайвани на 100&nbsp;мл</label>
+                <output class="control__value" for="grams" id="grams-out">2&nbsp;г</output>
+              </div>
+              <input class="range" type="range" id="grams" min="0" max="12" step="1" value="2" aria-describedby="grams-hint">
+              <div class="pinch">
+                <button class="btn btn--ghost pinch__btn" type="button" data-pinch="-1">− щепотка</button>
+                <button class="btn pinch__btn" type="button" data-pinch="1">+ щепотка</button>
+              </div>
+            </div>
+            <div class="verdict js-only" id="grams-hint" aria-live="polite">
+              <p class="verdict__badge" data-grams-badge>Мало</p>
+              <p class="verdict__text" data-grams-text>Для улуна — 6–7 г на 100 мл.</p>
+            </div>
+          </div>
+          <div class="chapter__stage">
+            <svg class="scene scene--scale" viewBox="0 0 520 470" aria-hidden="true" focusable="false">
+              <circle class="t1" cx="260" cy="270" r="190"/>
+              <g data-tray>
+                <path class="b s w4" d="M160 120 H360 C360 186 318 228 260 228 C202 228 160 186 160 120 Z"/>
+                <g data-scale-leaves></g>
+                <path class="f" d="M118 236 H402 L388 254 H132 Z"/>
+                <rect class="f" x="244" y="226" width="32" height="14"/>
+              </g>
+              <rect class="f" x="96" y="262" width="328" height="176" rx="38"/>
+              <circle class="b" cx="260" cy="352" r="66"/>
+              <path class="t2-stroke w10" data-gram-zone d="M0 0"/>
+              <g class="dial-ticks" data-dial-ticks></g>
+              <g data-needle>
+                <path class="f" d="M256 352 L260 300 L264 352 Z"/>
+              </g>
+              <circle class="f" cx="260" cy="352" r="9"/>
+              <text class="svg-label svg-label--bg" x="260" y="420" text-anchor="middle" data-dial-text>2 г</text>
+              <ellipse class="b eye" cx="140" cy="300" rx="6" ry="7"/>
+              <ellipse class="b eye" cx="380" cy="300" rx="6" ry="7"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Глава 4 -->
+      <article class="chapter chapter--pour is-inv" id="ch-4" aria-labelledby="ch-4-title" data-step="4">
+        <div class="container chapter__inner">
+          <div class="chapter__text">
+            <p class="chapter__num"><span>Шаг 4</span> из 6</p>
+            <h3 class="chapter__title" id="ch-4-title">Пролив</h3>
+            <p>Залейте воду и засеките время. В первые секунды лист просыпается: скрученный улун разворачивается и отдаёт аромат. Не уходите от гайвани — пролив длится секунды, а не минуты.</p>
+            <p>Когда время вышло, слейте настой целиком в сливник (чахай): чай, оставленный на листе, продолжает завариваться и горчит. Улун и пуэр перед первым проливом промывают — заливают и сразу сливают воду, чтобы прогреть и разбудить лист.</p>
+            <div class="pour-ui js-only">
+              <div class="timer" role="timer" aria-live="off">
+                <svg class="timer__ring" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                  <circle class="t1" cx="60" cy="60" r="52"/>
+                  <circle class="s w8 timer__track" cx="60" cy="60" r="52"/>
+                  <circle class="s w8 timer__progress" data-timer-ring cx="60" cy="60" r="52" transform="rotate(-90 60 60)"/>
+                </svg>
+                <p class="timer__value"><span data-timer-sec>20</span><span class="timer__unit">сек</span></p>
+              </div>
+              <div class="pour-ui__side">
+                <p class="pour-ui__plan">Первый пролив для <span data-tea-gen>улуна</span>: <b data-tea-time>20&nbsp;секунд</b></p>
+                <div class="pour-ui__buttons">
+                  <button class="btn btn--lg" type="button" data-pour>Залить</button>
+                  <button class="btn btn--ghost" type="button" data-pour-reset hidden>Заново</button>
+                </div>
+                <p class="pour-ui__status" data-pour-status aria-live="assertive">Лист в гайвани, вода готова.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chapter__stage">
+            <svg class="scene scene--gaiwan" viewBox="0 0 520 480" aria-hidden="true" focusable="false">
+              <defs>
+                <clipPath id="bowl-clip">
+                  <path d="M152 286 H368 C368 356 320 398 260 398 C200 398 152 356 152 286 Z"/>
+                </clipPath>
+              </defs>
+              <circle class="t1" cx="270" cy="290" r="180"/>
+              <path class="s w10 stream" data-stream d="M126 118 C150 128 196 150 230 210 C246 240 254 270 256 330"/>
+              <g class="pour-kettle" data-kettle>
+                <path class="s w12" d="M58 70 C20 82 18 140 52 156"/>
+                <path class="f" d="M50 60 H150 C168 60 176 72 176 90 V140 C176 168 156 178 130 178 H74 C52 178 40 166 40 146 V78 C40 66 44 60 50 60 Z"/>
+                <path class="f" d="M168 96 L214 80 L222 94 L174 130 Z"/>
+                <rect class="f" x="70" y="40" width="76" height="16" rx="6"/>
+                <ellipse class="b eye" cx="88" cy="114" rx="5" ry="6"/>
+                <ellipse class="b eye" cx="130" cy="114" rx="5" ry="6"/>
+                <path class="sb w3" d="M100 132 C106 138 112 138 118 132"/>
+              </g>
+              <g class="gaiwan-lid">
+                <path class="f" d="M400 366 C400 336 430 318 462 318 C494 318 510 336 510 366 Z"/>
+                <rect class="f" x="446" y="300" width="30" height="20" rx="8"/>
+              </g>
+              <path class="b" d="M152 286 H368 C368 356 320 398 260 398 C200 398 152 356 152 286 Z"/>
+              <g clip-path="url(#bowl-clip)">
+                <rect class="t2" data-bowl-water x="140" y="400" width="240" height="120"/>
+                <g data-leaf-group transform="translate(260 360)">
+                  <path class="f" data-leaf-shape d="M2 -22 C16 -22 24 -10 22 4 C20 16 10 24 -2 22 C-14 20 -24 10 -22 -4 C-20 -16 -12 -22 2 -22 Z"/>
+                  <path class="sb w3" data-leaf-vein d="M-10 -8 C-2 -14 10 -6 6 6"/>
+                </g>
+              </g>
+              <path class="s w4" d="M140 286 H380"/>
+              <path class="s w4" d="M152 286 C152 356 200 398 260 398 C320 398 368 356 368 286"/>
+              <path class="f" d="M206 398 H314 L304 412 H216 Z"/>
+              <path class="f" d="M140 412 H380 C380 428 366 436 350 436 H170 C154 436 140 428 140 412 Z"/>
+              <g class="gaiwan-steam" data-gaiwan-steam opacity="0">
+                <path class="s w3 steam" d="M230 270 C216 252 242 240 230 220 C220 204 238 194 230 180"/>
+                <path class="s w3 steam steam--2" d="M290 270 C276 252 302 240 290 220 C280 204 298 194 290 180"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Глава 5 -->
+      <article class="chapter chapter--steeps" id="ch-5" aria-labelledby="ch-5-title" data-step="5">
+        <div class="container chapter__inner">
+          <div class="chapter__text">
+            <p class="chapter__num"><span>Шаг 5</span> из 6</p>
+            <h3 class="chapter__title" id="ch-5-title">Сколько проливов</h3>
+            <p>Хороший лист заваривают не один раз. Каждый следующий пролив делайте чуть длиннее — на 5–10 секунд: лист отдаёт вкус постепенно, и у каждой чашки он свой.</p>
+            <p>Когда настой стал водянистым — лист закончился, это нормально. Зелёный выдерживает 2–3 пролива, улун и пуэр — 6–10.</p>
+            <div class="steeps-info js-only" aria-live="polite">
+              <p class="steeps-info__big"><span data-steeps-range>6–8</span> <span data-steeps-word>проливов</span></p>
+              <p class="steeps-info__note" data-steeps-note>Скрученный лист разворачивается постепенно — вкус меняется от пролива к проливу.</p>
+            </div>
+          </div>
+          <div class="chapter__stage">
+            <svg class="scene scene--cups" viewBox="0 0 520 300" role="img" aria-labelledby="cups-title" data-cups>
+              <title id="cups-title">Чашки: сколько проливов выдержит лист</title>
+              <g data-cup-slots>
+                <!-- Наполняется скриптом; по умолчанию 10 чашек -->
+              </g>
+            </svg>
+            <div class="bars" role="group" aria-labelledby="bars-title">
+              <p class="bars__title" id="bars-title">Проливов из одного листа</p>
+              <ul class="bars__list" data-bars>
+                <li class="bars__row" data-tea-row="green"><span class="bars__name">Зелёный</span><span class="bars__track"><span class="bars__fill" style="--from:2;--to:3"></span></span><span class="bars__val">2–3</span></li>
+                <li class="bars__row" data-tea-row="white"><span class="bars__name">Белый</span><span class="bars__track"><span class="bars__fill" style="--from:4;--to:6"></span></span><span class="bars__val">4–6</span></li>
+                <li class="bars__row is-active" data-tea-row="oolong"><span class="bars__name">Улун</span><span class="bars__track"><span class="bars__fill" style="--from:6;--to:8"></span></span><span class="bars__val">6–8</span></li>
+                <li class="bars__row" data-tea-row="red"><span class="bars__name">Красный</span><span class="bars__track"><span class="bars__fill" style="--from:4;--to:6"></span></span><span class="bars__val">4–6</span></li>
+                <li class="bars__row" data-tea-row="puer"><span class="bars__name">Пуэр</span><span class="bars__track"><span class="bars__fill" style="--from:8;--to:10"></span></span><span class="bars__val">8–10</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="schedule js-only">
+            <p class="schedule__title">Время каждого пролива для <span data-tea-gen>улуна</span></p>
+            <ol class="schedule__list" data-schedule></ol>
+          </div>
+        </div>
+      </article>
+
+      <!-- Глава 6 -->
+      <article class="chapter chapter--cheat is-inv" id="ch-6" aria-labelledby="ch-6-title" data-step="6">
+        <div class="container chapter__inner">
+          <div class="chapter__text">
+            <p class="chapter__num"><span>Шаг 6</span> из 6</p>
+            <h3 class="chapter__title" id="ch-6-title">Твоя шпаргалка</h3>
+            <p>Всё, что нужно запомнить, — на одной карточке. Скопируйте её в заметки или перепишите на стикер и приклейте рядом с чайником.</p>
+            <div class="cheat-actions js-only">
+              <button class="btn btn--lg" type="button" data-copy>Скопировать шпаргалку</button>
+              <a class="btn btn--ghost" href="#ch-1">Выбрать другой чай</a>
+              <p class="cheat-actions__status" data-copy-status role="status"></p>
+            </div>
+          </div>
+          <div class="chapter__stage">
+            <div class="cheat js-only" data-cheat>
+              <div class="cheat__head">
+                <svg class="cheat__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#ic-oolong" data-tea-icon/></svg>
+                <div>
+                  <p class="cheat__brand">УЛУН · шпаргалка</p>
+                  <p class="cheat__tea" data-cheat-tea>Улун</p>
+                </div>
+              </div>
+              <dl class="cheat__list" data-cheat-text>
+                <div><dt>Вода</dt><dd data-cheat-temp>90&nbsp;°C</dd></div>
+                <div><dt>Лист</dt><dd data-cheat-grams>7&nbsp;г на 100&nbsp;мл</dd></div>
+                <div><dt>Первый пролив</dt><dd data-cheat-time>20&nbsp;с, дальше +5&nbsp;с</dd></div>
+                <div><dt>Проливов</dt><dd data-cheat-steeps>6–8</dd></div>
+                <div><dt>Промывка</dt><dd data-cheat-rinse>да, 5&nbsp;с</dd></div>
+              </dl>
+              <p class="cheat__notes" data-cheat-notes></p>
+            </div>
+            <div class="table-wrap">
+              <table class="tea-table">
+                <caption>Все пять чаёв коротко (на 100&nbsp;мл воды)</caption>
+                <thead>
+                  <tr><th scope="col">Чай</th><th scope="col">Вода</th><th scope="col">Лист</th><th scope="col">1-й пролив</th><th scope="col">Проливов</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Зелёный</th><td>75–80&nbsp;°C</td><td>3–4&nbsp;г</td><td>30&nbsp;с, +10</td><td>2–3</td></tr>
+                  <tr><th scope="row">Белый</th><td>80–85&nbsp;°C</td><td>4–5&nbsp;г</td><td>40&nbsp;с, +10</td><td>4–6</td></tr>
+                  <tr><th scope="row">Улун</th><td>90–95&nbsp;°C</td><td>6–7&nbsp;г</td><td>20&nbsp;с, +5</td><td>6–8</td></tr>
+                  <tr><th scope="row">Красный</th><td>90–95&nbsp;°C</td><td>4–5&nbsp;г</td><td>20&nbsp;с, +10</td><td>4–6</td></tr>
+                  <tr><th scope="row">Пуэр</th><td>95–100&nbsp;°C</td><td>5–7&nbsp;г</td><td>15&nbsp;с, +5</td><td>8–10</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ОШИБКИ -->
+    <section class="mistakes" id="mistakes" aria-labelledby="mistakes-title">
+      <div class="container">
+        <p class="kicker">Разбор полётов</p>
+        <h2 class="section-title" id="mistakes-title">Частые ошибки</h2>
+        <p class="section-lead">Пять привычек, из-за которых хороший чай кажется невкусным. Слева — как бывает, справа — как надо.</p>
+        <ol class="mistakes__list">
+          <li class="mistake">
+            <h3 class="mistake__title"><span class="mistake__num">01</span>Кипяток для всего</h3>
+            <p>Зелёный и белый чай от кипятка горчат и теряют аромат. Дайте воде остыть до 75–85&nbsp;°C.</p>
+            <div class="mistake__pair">
+              <figure class="mini mini--bad">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <rect class="b s w3" x="20" y="8" width="16" height="56" rx="8"/><circle class="f" cx="28" cy="70" r="12"/><rect class="f" x="24" y="12" width="8" height="54" rx="4"/>
+                  <path class="s w3" d="M52 66 H104 C104 50 92 40 78 40 C64 40 52 50 52 66 Z"/>
+                  <path class="s w3 steam" d="M66 32 C60 24 72 20 66 10 M80 32 C74 24 86 20 80 10 M94 32 C88 24 100 20 94 10"/>
+                  <text class="svg-label svg-label--sm" x="54" y="84">100°</text>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-cross"/></svg>Не так</figcaption>
+              </figure>
+              <figure class="mini mini--good">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <rect class="b s w3" x="20" y="8" width="16" height="56" rx="8"/><circle class="f" cx="28" cy="70" r="12"/><rect class="f" x="24" y="30" width="8" height="36" rx="4"/>
+                  <path class="b s w3" d="M52 66 H104 C104 50 92 40 78 40 C64 40 52 50 52 66 Z"/>
+                  <ellipse class="f" cx="70" cy="54" rx="2.5" ry="3"/><ellipse class="f" cx="86" cy="54" rx="2.5" ry="3"/><path class="s w2" d="M74 59 C77 62 79 62 82 59"/>
+                  <text class="svg-label svg-label--sm" x="54" y="84">80°</text>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-check"/></svg>Так</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li class="mistake">
+            <h3 class="mistake__title"><span class="mistake__num">02</span>Лист «на глаз»</h3>
+            <p>Ложка — плохая мерка: скрученный улун и пушистый белый весят по-разному. Взвесьте один раз — дальше рука запомнит.</p>
+            <div class="mistake__pair">
+              <figure class="mini mini--bad">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <path class="b s w3" d="M22 30 H98 C98 62 82 78 60 78 C38 78 22 62 22 30 Z"/>
+                  <path class="t2" d="M26 40 H94 C92 62 78 74 60 74 C42 74 28 62 26 40 Z"/>
+                  <path class="f" d="M56 62 C58 58 62 58 64 62 C62 66 58 66 56 62 Z"/>
+                  <path class="s w3" d="M96 14 C86 10 78 20 70 18"/>
+                  <text class="svg-label svg-label--sm" x="70" y="12">?</text>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-cross"/></svg>Не так</figcaption>
+              </figure>
+              <figure class="mini mini--good">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <rect class="f" x="24" y="50" width="72" height="32" rx="10"/>
+                  <circle class="b" cx="60" cy="66" r="10"/><path class="s w2" d="M60 66 L66 60"/>
+                  <path class="f" d="M30 42 H90 L86 48 H34 Z"/>
+                  <path class="b s w3" d="M38 20 H82 C82 34 72 42 60 42 C48 42 38 34 38 20 Z"/>
+                  <circle class="f" cx="52" cy="28" r="5"/><circle class="f" cx="62" cy="26" r="5"/><circle class="f" cx="70" cy="30" r="5"/><circle class="f" cx="58" cy="34" r="4"/>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-check"/></svg>Так</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li class="mistake">
+            <h3 class="mistake__title"><span class="mistake__num">03</span>Забыть про время</h3>
+            <p>Лишняя минута — и чай терпкий, вяжет язык. Пролив — это секунды: ставьте таймер, хоть на телефоне.</p>
+            <div class="mistake__pair">
+              <figure class="mini mini--bad">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <circle class="b s w3" cx="40" cy="44" r="26"/><path class="s w3" d="M40 44 V26 M40 44 L54 52"/><path class="s w3" d="M30 12 H50"/>
+                  <path class="f" d="M74 44 H106 C106 64 98 74 90 74 C82 74 74 64 74 44 Z"/>
+                  <path class="s w3" d="M90 18 V30 M90 36 V37"/>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-cross"/></svg>Не так</figcaption>
+              </figure>
+              <figure class="mini mini--good">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <circle class="t1" cx="40" cy="44" r="26"/><circle class="s w6" cx="40" cy="44" r="26" stroke-dasharray="54 200" transform="rotate(-90 40 44)"/>
+                  <text class="svg-label svg-label--sm" x="40" y="49" text-anchor="middle">20</text>
+                  <path class="b s w3" d="M74 44 H106 C106 64 98 74 90 74 C82 74 74 64 74 44 Z"/>
+                  <path class="t2" d="M77 50 H103 C101 64 96 70 90 70 C84 70 79 64 77 50 Z"/>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-check"/></svg>Так</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li class="mistake">
+            <h3 class="mistake__title"><span class="mistake__num">04</span>Оставлять настой на листе</h3>
+            <p>Чай, который «постоял» на листе, продолжает завариваться. Сливайте всё до последней капли в сливник — следующий пролив будет чистым.</p>
+            <div class="mistake__pair">
+              <figure class="mini mini--bad">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <path class="f" d="M28 36 H92 C92 62 78 74 60 74 C42 74 28 62 28 36 Z"/>
+                  <path class="s w3" d="M22 36 H98 M30 80 H90"/>
+                  <path class="s w3 dots" d="M40 22 C50 14 70 14 80 22"/>
+                  <text class="svg-label svg-label--sm" x="60" y="12" text-anchor="middle">z z z</text>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-cross"/></svg>Не так</figcaption>
+              </figure>
+              <figure class="mini mini--good">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <g transform="rotate(-28 40 40)"><path class="b s w3" d="M14 30 H62 C62 50 52 60 38 60 C24 60 14 50 14 30 Z"/><path class="s w3" d="M10 30 H66"/></g>
+                  <path class="s w4" d="M66 38 C72 46 74 56 74 62"/>
+                  <path class="b s w3" d="M60 62 H100 V80 C100 84 96 86 92 86 H68 C64 86 60 84 60 80 Z"/>
+                  <path class="t2" d="M62 70 H98 V80 C98 82 96 84 92 84 H68 C64 84 62 82 62 80 Z"/>
+                  <path class="s w3" d="M100 66 L108 62"/>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-check"/></svg>Так</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li class="mistake">
+            <h3 class="mistake__title"><span class="mistake__num">05</span>Хранить открытым</h3>
+            <p>Чай легко впитывает запахи и влагу. Держите его в плотной банке, подальше от специй, плиты и солнца.</p>
+            <div class="mistake__pair">
+              <figure class="mini mini--bad">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <path class="b s w3" d="M30 30 H74 V78 C74 82 70 84 66 84 H38 C34 84 30 82 30 78 Z"/>
+                  <g transform="rotate(-24 70 20)"><rect class="f" x="54" y="14" width="40" height="10" rx="4"/></g>
+                  <path class="s w3" d="M86 54 C82 48 90 44 86 38 M98 60 C94 54 102 50 98 44"/>
+                  <circle class="f" cx="44" cy="64" r="4"/><circle class="f" cx="56" cy="70" r="4"/><circle class="f" cx="50" cy="56" r="3"/>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-cross"/></svg>Не так</figcaption>
+              </figure>
+              <figure class="mini mini--good">
+                <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+                  <rect class="f" x="36" y="16" width="48" height="12" rx="5"/>
+                  <path class="b s w3" d="M36 30 H84 V78 C84 82 80 84 76 84 H44 C40 84 36 82 36 78 Z"/>
+                  <rect class="f" x="44" y="46" width="32" height="24" rx="5"/>
+                  <ellipse class="b" cx="54" cy="56" rx="2.5" ry="3"/><ellipse class="b" cx="66" cy="56" rx="2.5" ry="3"/><path class="sb w2" d="M56 62 C58 64 62 64 64 62"/>
+                </svg>
+                <figcaption><svg class="mini__mark" aria-hidden="true" focusable="false"><use href="#ic-check"/></svg>Так</figcaption>
+              </figure>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ЧАЙНАЯ -->
+    <section class="teahouse is-inv" id="teahouse" aria-labelledby="teahouse-title">
+      <div class="container teahouse__inner">
+        <div class="teahouse__text">
+          <p class="kicker">Чайная «УЛУН»</p>
+          <h2 class="section-title" id="teahouse-title">Приходите на дегустацию</h2>
+          <p class="section-lead">Тихое место в центре Москвы. Мастер заварит пять чаёв из этого гида, покажет, как раскрывается лист, и поможет подобрать чай для дома.</p>
+          <ul class="facts">
+            <li><b>90 минут</b> — пять чаёв и неспешный разговор</li>
+            <li><b>До 6 гостей</b> за одним столом</li>
+            <li><b>Ежедневно 12:00–22:00</b></li>
+            <li><b>Москва, у Чистых прудов</b> — адрес вымышленный</li>
+          </ul>
+        </div>
+        <figure class="teahouse__art" aria-hidden="true">
+          <svg class="scene scene--room" viewBox="0 0 640 520" focusable="false">
+            <path class="t1" d="M120 470 V170 C120 92 182 40 260 40 C338 40 400 92 400 170 V470 Z"/>
+            <path class="s w4" d="M140 470 V176 C140 108 194 60 260 60 C326 60 380 108 380 176 V470"/>
+            <path class="s w3" d="M260 60 V470 M140 250 H380"/>
+            <circle class="f" cx="320" cy="130" r="26"/>
+            <path class="s w3" d="M150 230 C190 200 220 196 250 170 M196 204 C200 190 214 184 224 186 M224 184 C232 172 246 170 254 176"/>
+            <use href="#leaf" x="196" y="150" width="20" height="40" transform="rotate(-50 206 170)"/>
+            <use href="#leaf" x="232" y="160" width="18" height="36" transform="rotate(40 241 178)"/>
+            <path class="s w3" d="M540 0 V120"/>
+            <path class="f" d="M496 160 C496 134 516 120 540 120 C564 120 584 134 584 160 Z"/>
+            <path class="t1" d="M470 260 L496 160 H584 L610 260 Z"/>
+            <path class="s w3" d="M440 200 H620 M440 300 H620"/>
+            <rect class="f" x="450" y="170" width="34" height="30" rx="6"/>
+            <rect class="b s w3" x="492" y="176" width="28" height="24" rx="6"/>
+            <rect class="f" x="456" y="256" width="40" height="44" rx="8"/>
+            <rect class="b s w3" x="504" y="266" width="34" height="34" rx="8"/>
+            <rect class="f" x="548" y="262" width="30" height="38" rx="8"/>
+            <path class="s w4" d="M40 470 H620"/>
+            <path class="f" d="M140 404 H520 V418 H140 Z"/>
+            <path class="f" d="M170 418 H190 V470 H170 Z M470 418 H490 V470 H470 Z"/>
+            <path class="f" d="M48 470 C48 440 74 428 104 428 C134 428 150 440 150 470 Z"/>
+            <path class="f" d="M512 470 C512 440 538 428 568 428 C598 428 614 440 614 470 Z"/>
+            <g class="room-pot">
+              <path class="s w8" d="M346 352 C372 350 376 384 350 392"/>
+              <path class="f" d="M254 376 C236 374 226 364 220 346 L212 336 L226 332 C232 346 240 354 258 356 Z"/>
+              <path class="f" d="M250 370 C250 336 270 320 298 320 C326 320 346 336 346 370 C346 394 326 404 298 404 C270 404 250 394 250 370 Z"/>
+              <path class="f" d="M270 324 C276 310 320 310 326 324 Z"/>
+              <circle class="f" cx="298" cy="308" r="7"/>
+              <ellipse class="b" cx="286" cy="372" rx="4" ry="5"/><ellipse class="b" cx="310" cy="372" rx="4" ry="5"/>
+              <path class="sb w3" d="M292 384 C296 388 300 388 304 384"/>
+            </g>
+            <path class="b s w3" d="M378 384 H416 C416 398 408 404 397 404 C386 404 378 398 378 384 Z"/>
+            <path class="b s w3" d="M428 384 H466 C466 398 458 404 447 404 C436 404 428 398 428 384 Z"/>
+            <g class="room-steam">
+              <path class="s w3 steam" d="M220 320 C210 306 230 298 220 284 C212 272 226 264 220 254"/>
+              <path class="s w3 steam steam--2" d="M398 374 C390 364 406 356 398 346"/>
+              <path class="s w3 steam steam--3" d="M448 374 C440 364 456 356 448 346"/>
+            </g>
+          </svg>
+        </figure>
+
+        <form class="booking" id="booking" aria-labelledby="booking-title">
+          <h3 class="booking__title" id="booking-title">Записаться на дегустацию</h3>
+          <p class="booking__demo">Демо-форма: данные никуда не отправляются.</p>
+          <div class="booking__grid">
+            <div class="field">
+              <label for="b-date">Дата</label>
+              <input id="b-date" name="date" type="date" required>
+              <p class="field__error" id="b-date-err" hidden>Выберите дату</p>
+            </div>
+            <div class="field">
+              <label for="b-time">Время</label>
+              <select id="b-time" name="time" required>
+                <option value="">Выберите</option>
+                <option>12:00</option><option>14:00</option><option>16:00</option><option>18:00</option><option>20:00</option>
+              </select>
+              <p class="field__error" id="b-time-err" hidden>Выберите время</p>
+            </div>
+            <div class="field field--wide">
+              <div class="control__head">
+                <label for="b-guests">Гостей</label>
+                <output class="control__value" for="b-guests" id="b-guests-out">2</output>
+              </div>
+              <input class="range" id="b-guests" name="guests" type="range" min="1" max="6" step="1" value="2">
+            </div>
+            <div class="field">
+              <label for="b-name">Имя</label>
+              <input id="b-name" name="name" type="text" autocomplete="given-name" required minlength="2" placeholder="Как к вам обращаться">
+              <p class="field__error" id="b-name-err" hidden>Напишите имя — хотя бы две буквы</p>
+            </div>
+            <div class="field">
+              <label for="b-phone">Телефон</label>
+              <input id="b-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 900 000-00-00">
+              <p class="field__error" id="b-phone-err" hidden>Нужен номер из 10–11 цифр</p>
+            </div>
+          </div>
+          <button class="btn btn--lg booking__submit" type="submit">Записаться</button>
+          <div class="booking__done" data-booking-done hidden tabindex="-1">
+            <p class="booking__done-title">Запись принята (демо)</p>
+            <p data-booking-summary></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle class="f" cx="20" cy="20" r="19"/>
+          <path class="b" d="M20 7 C29 13 31 22 26 29 C24 32 22 33 20 34 C18 33 16 32 14 29 C9 22 11 13 20 7 Z"/>
+          <path class="s w2" d="M20 12 C20.5 19 20.5 26 20 33"/>
+        </svg>
+        <p class="site-footer__word">УЛУН</p>
+        <p class="site-footer__tag">Чайная, где считают до четырёх.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Навигация в подвале">
+        <ul>
+          <li><a href="#guide">Гид по заварке</a></li>
+          <li><a href="#ch-6">Шпаргалка</a></li>
+          <li><a href="#mistakes">Частые ошибки</a></li>
+          <li><a href="#teahouse">Чайная</a></li>
+        </ul>
+      </nav>
+      <p class="concept">Концепт-проект. Бренд вымышленный. Дизайн и разработка — <a href="https://viachkovdesign.github.io">ViachKovDesign</a></p>
+    </div>
+  </footer>
+
+  <div class="leaf-cursor" aria-hidden="true">
+    <svg viewBox="-30 -60 60 120" width="18" height="36" focusable="false"><use href="#leaf"/></svg>
+  </div>
+
+  <script type="application/json" id="teas-data">{"volume":100,"teas":[{"id":"green","name":"Зелёный","nameGen":"зелёного","example":"Лунцзин, Билочунь","about":"Нежный, почти не окислен. Боится кипятка — сразу становится горьким.","tempMin":75,"tempMax":80,"grams":3,"gramsMin":3,"gramsMax":4,"time":30,"timeAdd":10,"steeps":3,"steepsMin":2,"steepsMax":3,"rinse":false,"steepsNote":"Зелёный отдаёт вкус быстро: два-три пролива — и лист устал."},{"id":"white","name":"Белый","nameGen":"белого","example":"Бай Му Дань, Серебряные иглы","about":"Почти без обработки: лист просто завялен и высушен. Мягкий, медовый.","tempMin":80,"tempMax":85,"grams":4,"gramsMin":4,"gramsMax":5,"time":40,"timeAdd":10,"steeps":5,"steepsMin":4,"steepsMax":6,"rinse":false,"steepsNote":"Белый раскрывается неторопливо: держит вкус четыре-шесть проливов."},{"id":"oolong","name":"Улун","nameGen":"улуна","example":"Те Гуань Инь, Да Хун Пао","about":"Наш любимец. Частично окислен, скручен в шарики или жгутики, раскрывается долго.","tempMin":90,"tempMax":95,"grams":7,"gramsMin":6,"gramsMax":7,"time":20,"timeAdd":5,"steeps":7,"steepsMin":6,"steepsMax":8,"rinse":true,"steepsNote":"Скрученный лист разворачивается постепенно — вкус меняется от пролива к проливу."},{"id":"red","name":"Красный","nameGen":"красного","example":"Дянь Хун, Цзинь Цзюнь Мэй","about":"В Европе его зовут чёрным. Полностью окислен, сладкий, хлебный, иногда с ноткой мёда.","tempMin":90,"tempMax":95,"grams":5,"gramsMin":4,"gramsMax":5,"time":20,"timeAdd":10,"steeps":5,"steepsMin":4,"steepsMax":6,"rinse":false,"steepsNote":"Красный щедрый, но не бесконечный: четыре-шесть проливов."},{"id":"puer","name":"Пуэр","nameGen":"пуэра","example":"Шу пуэр, Шэн пуэр","about":"Прессованный и выдержанный. Плотный, землистый, любит крутой кипяток.","tempMin":95,"tempMax":100,"grams":6,"gramsMin":5,"gramsMax":7,"time":15,"timeAdd":5,"steeps":9,"steepsMin":8,"steepsMax":10,"rinse":true,"steepsNote":"Пуэр — марафонец: восемь-десять проливов, а хороший — и больше."}]}</script>
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
