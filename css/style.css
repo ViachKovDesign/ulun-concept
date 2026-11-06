@@ -439,8 +439,9 @@ html:not(.js) .tea-card:has(input:checked) { background: var(--rice); color: var
 .schedule__list li b { font-family: var(--font-display); font-size: .8rem; }
 .schedule__list li.is-extra { border-style: dashed; }
 @media (min-width: 1024px) {
-  .chapter--steeps .schedule { grid-column: 1; }
+  .chapter--steeps .schedule, .chapter--cheat .table-wrap { grid-column: 1; }
 }
+@media (min-width: 1024px) { .chapter--cheat .chapter__inner { align-items: start; } .chapter--cheat .tea-table th, .chapter--cheat .tea-table td { padding: 6px 8px; } }
 
 /* Глава 6: шпаргалка */
 .cheat-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 8px; }
@@ -462,10 +463,10 @@ html:not(.js) .tea-card:has(input:checked) { background: var(--rice); color: var
 .cheat__brand { font-family: var(--font-display); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
 .cheat__tea { font-family: var(--font-display); font-size: 1.9rem; font-weight: 800; line-height: 1.1; }
 .cheat__list { display: grid; gap: 2px; }
-.cheat__list div { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid rgba(var(--fg-rgb), .3); }
+.cheat__list div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; padding: 8px 0; border-bottom: 1px solid rgba(var(--fg-rgb), .3); }
 .cheat__list div:last-child { border-bottom: 0; }
 .cheat__list dt { font-weight: 700; }
-.cheat__list dd { font-family: var(--font-display); font-weight: 700; text-align: right; }
+.cheat__list dd { font-family: var(--font-display); font-weight: 700; text-align: right; margin-left: auto; }
 .cheat__notes { margin-top: 10px; font-size: .92rem; font-weight: 700; }
 .cheat__notes:empty { display: none; }
 .cheat__notes::before { content: "!"; display: inline-grid; place-items: center; width: 1.4em; height: 1.4em; margin-right: 6px; border-radius: 50%; background: var(--fg); color: var(--bg); font-family: var(--font-display); font-size: .8em; }
@@ -507,8 +508,8 @@ html:not(.js) .tea-card:has(input:checked) { background: var(--rice); color: var
 .teahouse { padding: clamp(80px, 10vw, 140px) 0; }
 .teahouse__inner { display: grid; gap: 32px; grid-template-columns: minmax(0, 1fr); }
 .facts { display: grid; gap: 10px; margin-top: 24px; }
-.facts li { display: flex; gap: 12px; align-items: baseline; }
-.facts li::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50% 0 50% 0; background: currentColor; transform: translateY(-2px) rotate(45deg); }
+.facts li { position: relative; padding-left: 24px; }
+.facts li::before { content: ""; position: absolute; left: 2px; top: .6em; width: 10px; height: 10px; border-radius: 50% 0 50% 0; background: currentColor; transform: rotate(45deg); }
 .teahouse__art { width: min(100%, 600px); margin: 0 auto; }
 
 .booking {
@@ -576,11 +577,25 @@ html:not(.js) .tea-card:has(input:checked) { background: var(--rice); color: var
 .steps-rail ol { display: flex; }
 .steps-rail a { display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 44px; min-height: 44px; padding: 0 6px; text-decoration: none; font-weight: 800; font-size: .85rem; border-radius: 999px; }
 .steps-rail__dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--green); transition: background-color .3s, transform .3s; }
-.steps-rail__text { display: none; }
+.steps-rail__text { display: none; white-space: nowrap; }
 .steps-rail a.is-done .steps-rail__dot { background: rgba(var(--green-rgb), .4); }
 .steps-rail a[aria-current="step"] .steps-rail__dot { background: var(--green); transform: scale(1.25); }
 .steps-rail a[aria-current="step"] .steps-rail__text { display: inline; }
-@media (min-width: 1024px) { .steps-rail a { padding: 0 10px; } }
+@media (max-width: 767px) {
+  .steps-rail a[aria-current="step"] .steps-rail__text { display: none; }
+  .steps-rail { bottom: 10px; }
+}
+@media (min-width: 1024px) {
+  .steps-rail { left: auto; right: 14px; top: 50%; bottom: auto; transform: translate(160%, -50%); padding: 6px 0; }
+  .steps-rail.is-visible { transform: translate(0, -50%); }
+  .steps-rail ol { flex-direction: column; }
+  .steps-rail a { position: relative; }
+  .steps-rail a[aria-current="step"] .steps-rail__text { display: none; }
+  .steps-rail a:hover .steps-rail__text, .steps-rail a:focus-visible .steps-rail__text {
+    display: block; position: absolute; right: calc(100% + 10px); top: 50%; transform: translateY(-50%);
+    background: var(--green); color: var(--rice); padding: 4px 10px; border-radius: 999px;
+  }
+}
 
 /* ---------- Курсор-листик ---------- */
 .leaf-cursor {
