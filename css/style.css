@@ -225,7 +225,7 @@ html:not(.js) .js-only { display: none !important; }
 .hero__inner { display: grid; gap: 24px; align-items: center; }
 .hero__title {
   font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(2.3rem, 1rem + 5.2vw, 5.4rem); line-height: .98; letter-spacing: -.03em;
+  font-size: clamp(2.3rem, 1rem + 5.2vw, 5.4rem); line-height: 1.04; letter-spacing: -.03em;
   margin-bottom: 24px;
 }
 .hero__title .line { display: block; overflow: hidden; padding-bottom: .06em; }

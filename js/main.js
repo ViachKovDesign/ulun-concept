@@ -219,6 +219,7 @@
   function initScale() {
     var ticks = $('[data-dial-ticks]');
     if (!ticks) return;
+    ticks.innerHTML = '';
     var d = '';
     for (var g = 0; g <= 12; g++) {
       var a = gramAngle(g), major = g % 3 === 0;
@@ -358,7 +359,7 @@
     var tea = state.tea;
     pour.status = 'steeping';
     $('.timer').dataset.state = 'steeping';
-    setPourStatus('Настаиваем — смотрите, как разворачивается лист.');
+    setPourStatus(reduced ? 'Настаиваем — ждите сигнала.' : 'Настаиваем — смотрите, как разворачивается лист.');
     $('[data-gaiwan-steam]').setAttribute('opacity', 1);
     var total = tea.time * 1000 / speed;
     var start = performance.now();
@@ -654,7 +655,7 @@
     // Hero: появление
     var intro = gsap.timeline({ defaults: { ease: 'power4.out' } });
     intro.from('.hero__title .line > span', { yPercent: 110, duration: 1.1, stagger: 0.12 })
-      .from('.hero .kicker, .hero__lead, .hero__text .btn', { y: 24, opacity: 0, duration: 0.8, stagger: 0.08 }, 0.3)
+      .from('.hero .kicker, .hero__text .btn', { y: 24, opacity: 0, duration: 0.8, stagger: 0.08 }, 0.3)
       .from('.hero-pot', { scale: 0.7, opacity: 0, transformOrigin: '50% 100%', duration: 1.1, ease: 'back.out(1.6)' }, 0.2)
       .from('.hero-cup', { x: 40, opacity: 0, duration: 0.8 }, 0.6)
       .from('.hero-leaves use', { scale: 0, opacity: 0, transformOrigin: '50% 50%', duration: 0.8, stagger: 0.08, ease: 'back.out(2)' }, 0.5)
