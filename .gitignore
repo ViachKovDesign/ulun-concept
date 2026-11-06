@@ -1,0 +1,28 @@
+# Зависимости и сборка (в проекте их нет — библиотеки лежат в /vendor)
+node_modules/
+package-lock.json
+package.json
+
+# Отчёты и временные файлы тестов
+test-results/
+playwright-report/
+lighthouse*.json
+lighthouse*.html
+*.log
+*.tmp
+tmp/
+.cache/
+
+# Секреты и локальные настройки
+.env
+.env.*
+*.pem
+*.key
+
+# Системный мусор и редакторы
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp

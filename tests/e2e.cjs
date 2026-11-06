@@ -48,6 +48,34 @@ const base = process.argv[2] || 'http://localhost:8765/';
   assert.ok(leaf.startsWith('M0 -50'), 'лист развернулся: ' + leaf.slice(0, 20));
   console.log('✓ «Сливайте!», лист развернулся');
 
+  // 4б. Следующие проливы по расписанию улуна: 20, 25, 30 … 55 с, всего 8
+  assert.strictEqual(await page.textContent('[data-steep-count]'), 'Пролив 1 из 8');
+  assert.match(await page.textContent('[data-pour]'), /Следующий пролив · 25/);
+  await page.click('[data-pour]');
+  await page.waitForFunction(() => window.ULUN.state.steep === 2 && window.ULUN.state.pour === 'steeping', null, { timeout: 5000 });
+  assert.strictEqual(await page.textContent('[data-steep-count]'), 'Пролив 2 из 8');
+  assert.match(await page.textContent('[data-tea-time]'), /^25\s+секунд$/);
+  assert.match(await page.textContent('[data-pour-status]'), /Пролив 2 из 8/);
+  assert.strictEqual(await page.getAttribute('[data-schedule] li:nth-child(2)', 'aria-current'), 'step');
+  await page.waitForFunction(() => window.ULUN.state.pour === 'done', null, { timeout: 10000 });
+  console.log('✓ пролив 2 из 8 — 25 с, завершён');
+  await page.evaluate(() => window.ULUN.setSpeed(200));
+  for (let n = 3; n <= 8; n++) {
+    await page.click('[data-pour]');
+    await page.waitForFunction(k => window.ULUN.state.steep === k && window.ULUN.state.pour === 'done', n, { timeout: 10000 });
+    assert.strictEqual(await page.textContent('[data-steep-count]'), `Пролив ${n} из 8`);
+    assert.match(await page.textContent('[data-tea-time]'), new RegExp('^' + (20 + (n - 1) * 5) + '\\s'));
+  }
+  assert.ok(await page.isDisabled('[data-pour]'), 'после 8-го пролива кнопка выключена');
+  assert.match(await page.textContent('[data-pour]'), /Проливы закончились/);
+  assert.match(await page.textContent('[data-pour-status]'), /последний пролив/);
+  console.log('✓ проливы 3–8 по расписанию, после 8-го — «Проливы закончились»');
+  await page.click('[data-pour-reset]');
+  assert.strictEqual(await page.textContent('[data-steep-count]'), 'Пролив 1 из 8');
+  assert.strictEqual(await page.isDisabled('[data-pour]'), false);
+  console.log('✓ «Заново» возвращает к первому проливу');
+  await page.evaluate(() => window.ULUN.setSpeed(20));
+
   // 5–6. Проливы и шпаргалка
   assert.strictEqual(await page.textContent('[data-steeps-range]'), '6–8');
   const card = {

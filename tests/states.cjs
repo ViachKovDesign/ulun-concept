@@ -46,7 +46,13 @@ async function setRange(page, sel, v) { await page.locator(sel).fill(String(v));
       await page.click('[data-pour]');
       await page.waitForTimeout(6000); await shot(page, 'desktop-timer-progress');
       await page.waitForFunction(() => window.ULUN.state.pour === 'done', null, { timeout: 30000 });
-      await page.waitForTimeout(700); await shot(page, 'desktop-timer-done');
+      await page.waitForTimeout(1400); await shot(page, 'desktop-timer-done');
+      // Следующий пролив: «пролив 2 из 8», 25 секунд
+      await page.click('[data-pour]');
+      await page.waitForTimeout(5000); await shot(page, 'desktop-timer-steep2');
+      await page.evaluate(() => window.ULUN.setSpeed(50));
+      await page.waitForFunction(() => window.ULUN.state.pour === 'done', null, { timeout: 30000 });
+      await goTo(page, '#ch-5'); await shot(page, 'desktop-ch5-current-steep');
       // Шпаргалка: улун
       await goTo(page, '#ch-6'); await shot(page, 'desktop-cheat-oolong');
       // Шпаргалка: зелёный с ошибкой температуры
@@ -93,6 +99,10 @@ async function setRange(page, sel, v) { await page.locator(sel).fill(String(v));
     await page.click('[data-pour]');
     await page.waitForTimeout(800);
     await shot(page, 'reduced-motion-pour');
+    await page.waitForFunction(() => window.ULUN.state.pour === 'done', null, { timeout: 10000 });
+    await page.click('[data-pour]');
+    await page.waitForFunction(() => window.ULUN.state.steep === 2 && window.ULUN.state.pour === 'done', null, { timeout: 10000 });
+    await shot(page, 'reduced-motion-steep2-done');
     await page.screenshot({ path: path.join(out, 'reduced-motion-full.png'), fullPage: true });
     await ctx.close();
   }

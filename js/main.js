@@ -72,7 +72,7 @@
       gsap.fromTo('.jar__icon', { scale: 0.6, rotation: -20, transformOrigin: '50% 50%' }, { scale: 1, rotation: 0, duration: 0.7, ease: 'back.out(2.2)' });
       gsap.fromTo('.jar', { y: 0 }, { y: -10, duration: 0.18, yoyo: true, repeat: 1, ease: 'power2.out' });
     }
-    updateTemp(); updateGrams(); resetPour(); updateSteeps(); updateCheat();
+    updateTemp(); updateGrams(); updateSteeps(); resetPour(); updateCheat();
   }
 
   /* ---------- Глава 2: вода и пузырьки ---------- */
@@ -286,7 +286,7 @@
 
   /* ---------- Глава 4: пролив и таймер ---------- */
   var RING_C = 2 * Math.PI * 52;
-  var pour = { status: 'idle', raf: null, tl: null };
+  var pour = { status: 'idle', raf: null, tl: null, steep: 1, drain: {} };
   function fmtSec(s) { return s + NB + plural(s, ['секунда', 'секунды', 'секунд']); }
   function setLeaf(t) {
     t = clamp(t, 0, 1);
@@ -308,20 +308,33 @@
     el.textContent = text;
     el.classList.toggle('is-done', !!done);
   }
+  function steepTime(n) { var t = state.tea; return t.time + (n - 1) * t.timeAdd; }
+  function steepLabel() { return 'Пролив ' + pour.steep + ' из ' + state.tea.steepsMax; }
+  function updateSteepInfo() {
+    $('[data-steep-count]').textContent = steepLabel();
+    $('[data-tea-time]').textContent = fmtSec(steepTime(pour.steep));
+    $$('[data-schedule] li').forEach(function (li, i) {
+      var cur = i + 1 === pour.steep;
+      li.classList.toggle('is-current', cur);
+      if (cur) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+    });
+  }
   function resetPour() {
     var tea = state.tea; if (!tea) return;
     if (pour.raf) cancelAnimationFrame(pour.raf);
     if (pour.tl) pour.tl.kill();
+    if (animate) gsap.killTweensOf(pour.drain);
     pour.status = 'idle';
+    pour.steep = 1;
     $('[data-timer-ring]').style.strokeDasharray = RING_C.toFixed(2);
-    setRing(0, tea.time);
+    setRing(0, steepTime(1));
     setLeaf(0); setWater(0);
     var stream = $('[data-stream]');
     stream.style.opacity = 0; stream.style.strokeDashoffset = 400;
     $('[data-kettle]').removeAttribute('transform');
     if (animate) gsap.set('[data-kettle]', { clearProps: 'transform' });
     $('[data-gaiwan-steam]').setAttribute('opacity', 0);
-    $('[data-tea-time]').textContent = fmtSec(tea.time);
+    updateSteepInfo();
     var btn = $('[data-pour]');
     btn.disabled = false; btn.textContent = 'Залить';
     $('[data-pour-reset]').hidden = true;
@@ -330,59 +343,87 @@
   }
   function startPour() {
     var tea = state.tea;
-    if (!tea || pour.status !== 'idle') return;
+    if (!tea) return;
+    if (pour.status === 'done') {
+      if (pour.steep >= tea.steepsMax) return;
+      pour.steep += 1;
+    } else if (pour.status !== 'idle') return;
+    var first = pour.steep === 1;
+    if (animate) gsap.killTweensOf(pour.drain);
     pour.status = 'pouring';
+    updateSteepInfo();
+    setRing(0, steepTime(pour.steep));
     var btn = $('[data-pour]');
     btn.disabled = true;
-    setPourStatus('Льём воду…');
+    $('[data-pour-reset]').hidden = true;
+    setPourStatus(steepLabel() + ': льём воду…');
     $('.timer').dataset.state = 'pouring';
-    var pourDur = 1.2 / Math.min(speed, 4);
+    var k = Math.min(speed, 4);
+    var pourDur = 1.2 / k;
     if (animate) {
       var kettle = $('[data-kettle]');
       var stream = $('[data-stream]');
       var leafObj = { t: 0 };
+      var water = { w: 0 };
       pour.tl = gsap.timeline({ onComplete: startTimer })
-        .to(kettle, { rotation: 20, svgOrigin: '108 120', duration: 0.45 / Math.min(speed, 4), ease: 'power2.inOut' })
+        .to(kettle, { rotation: 20, svgOrigin: '108 120', duration: 0.45 / k, ease: 'power2.inOut' })
         .set(stream, { opacity: 1 })
-        .fromTo(stream, { strokeDashoffset: 400 }, { strokeDashoffset: 0, duration: 0.35 / Math.min(speed, 4), ease: 'none' })
-        .to({ w: 0 }, { w: 1, duration: pourDur, ease: 'power1.out', onUpdate: function () { setWater(this.targets()[0].w); } }, '<')
-        .to(leafObj, { t: 0.3, duration: pourDur, ease: 'power1.out', onUpdate: function () { setLeaf(leafObj.t); } }, '<')
-        .to(stream, { strokeDashoffset: -400, duration: 0.35 / Math.min(speed, 4), ease: 'none' })
-        .to(kettle, { rotation: 0, svgOrigin: '108 120', duration: 0.45 / Math.min(speed, 4), ease: 'power2.inOut' }, '<')
+        .fromTo(stream, { strokeDashoffset: 400 }, { strokeDashoffset: 0, duration: 0.35 / k, ease: 'none' })
+        .to(water, { w: 1, duration: pourDur, ease: 'power1.out', onUpdate: function () { setWater(water.w); } }, '<');
+      if (first) pour.tl.to(leafObj, { t: 0.3, duration: pourDur, ease: 'power1.out', onUpdate: function () { setLeaf(leafObj.t); } }, '<');
+      pour.tl
+        .to(stream, { strokeDashoffset: -400, duration: 0.35 / k, ease: 'none' })
+        .to(kettle, { rotation: 0, svgOrigin: '108 120', duration: 0.45 / k, ease: 'power2.inOut' }, '<')
         .set(stream, { opacity: 0 });
     } else {
-      setWater(1); setLeaf(reduced ? 1 : 0.3);
+      setWater(1);
+      if (first) setLeaf(reduced ? 1 : 0.3);
       startTimer();
     }
   }
   function startTimer() {
-    var tea = state.tea;
+    var steep = pour.steep, first = steep === 1;
+    var secs = steepTime(steep);
     pour.status = 'steeping';
     $('.timer').dataset.state = 'steeping';
-    setPourStatus(reduced ? 'Настаиваем — ждите сигнала.' : 'Настаиваем — смотрите, как разворачивается лист.');
+    setPourStatus(steepLabel() + ': ' + (first && !reduced ? 'настаиваем — смотрите, как разворачивается лист.' : 'настаиваем — ждите сигнала.'));
     $('[data-gaiwan-steam]').setAttribute('opacity', 1);
-    var total = tea.time * 1000 / speed;
+    var total = secs * 1000 / speed;
     var start = performance.now();
     var lastSec = null;
     function tick(now) {
       var p = clamp((now - start) / total, 0, 1);
-      var left = Math.ceil(tea.time * (1 - p));
+      var left = Math.ceil(secs * (1 - p));
       if (left !== lastSec) { setRing(p, left); lastSec = left; } else { $('[data-timer-ring]').style.strokeDashoffset = (RING_C * (1 - p)).toFixed(2); }
-      if (!reduced) setLeaf(0.3 + 0.7 * (animate ? (1 - Math.pow(1 - p, 2)) : p));
+      if (first && !reduced) setLeaf(0.3 + 0.7 * (animate ? (1 - Math.pow(1 - p, 2)) : p));
       if (p >= 1) { finishPour(); return; }
       pour.raf = requestAnimationFrame(tick);
     }
     pour.raf = requestAnimationFrame(tick);
   }
   function finishPour() {
+    var last = pour.steep >= state.tea.steepsMax;
     pour.status = 'done';
     pour.raf = null;
     setRing(1, 0);
     setLeaf(1);
     $('.timer').dataset.state = 'done';
-    setPourStatus('Сливайте!', true);
+    setPourStatus(last ? 'Сливайте! Это был последний пролив — лист отдал всё.' : 'Сливайте!', true);
+    // настой уходит в сливник
+    pour.drain = { v: 1 };
+    if (animate) {
+      gsap.to(pour.drain, { v: 0, duration: 0.8, delay: 0.4, ease: 'power2.in', onUpdate: function () { setWater(this.targets()[0].v); } });
+    } else {
+      setWater(0);
+    }
     var btn = $('[data-pour]');
-    btn.textContent = 'Готово';
+    if (last) {
+      btn.textContent = 'Проливы закончились';
+      btn.disabled = true;
+    } else {
+      btn.textContent = 'Следующий пролив · ' + steepTime(pour.steep + 1) + NB + 'с';
+      btn.disabled = false;
+    }
     $('[data-pour-reset]').hidden = false;
     if (animate) gsap.fromTo('[data-pour-status]', { scale: 0.7 }, { scale: 1, duration: 0.6, ease: 'back.out(3)', transformOrigin: 'left center' });
   }
@@ -751,7 +792,7 @@
   }
 
   window.ULUN = {
-    get state() { return { tea: state.tea && state.tea.id, temp: state.temp, grams: state.grams, pour: pour.status }; },
+    get state() { return { tea: state.tea && state.tea.id, temp: state.temp, grams: state.grams, pour: pour.status, steep: pour.steep }; },
     setSpeed: function (n) { speed = Math.max(1, Number(n) || 1); },
     cheatText: function () { return cheatText(); }
   };

@@ -614,3 +614,12 @@ html:not(.js) .tea-card:has(input:checked) { background: var(--rice); color: var
   .leaf-cursor { display: none; }
 }
 html.no-motion .steam, html.no-motion .eye { animation: none; }
+
+/* Счётчик проливов и текущий пролив в расписании */
+.pour-ui__count {
+  justify-self: start;
+  display: inline-block; padding: 4px 12px; border-radius: 999px;
+  background: var(--fg); color: var(--bg);
+  font-family: var(--font-display); font-weight: 700; font-size: .85rem; letter-spacing: .04em;
+}
+.schedule__list li.is-current { background: var(--fg); color: var(--bg); border-style: solid; }
